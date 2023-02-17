@@ -7,6 +7,7 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import WooFeatured from '../components/woo/woo-featured'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
@@ -19,6 +20,7 @@ export default function Index({ allPosts: { edges }, preview }) {
       </Head>
       <Container>
         <Intro />
+        <WooFeatured />
         {heroPost && (
           <HeroPost
             title={heroPost.title}
